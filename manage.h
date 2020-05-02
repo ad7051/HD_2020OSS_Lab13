@@ -4,12 +4,10 @@ typedef struct{
     char name[50];
     int price;
     int quantity;
-    char[3] category;
+    char category[3];
 } Product;
 
-Product plist[100];
-int curcount, count, menu, sales;
-void addProduct(Product *p);
+void addProduct(Product *p,int count);
 void updateProduct(Product *p);
 void deleteProduct(Product *p);
 int selectMenu();
