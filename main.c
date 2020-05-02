@@ -23,18 +23,21 @@ int mn;//menu
 int count=0;
 int save=0;
 int money=0;
-count=loadData(p);
+//count=loadData(p);
 	while(1){
 		menu();
 		scanf("%d",&mn);
 		if(mn==1){
-			//addProduct
+			addProduct(p,count);
+			count++;
 		}
 		else if(mn==2){
-			//updateProduct
+			listProduct(p,count);
+			updateProduct(p);
 		}
 		else if(mn==3){
-			//deleteProduct
+			listProduct(p,count);
+			deleteProduct(p);
 		}
 		else if(mn==4){
 			//selectMenu
@@ -43,7 +46,7 @@ count=loadData(p);
 			//sellProduct
 		}
 		else if(mn==6){
-			//listProduct
+			listProduct(p,count);
 		}
 		else if(mn==7){
 			//lineProduct
@@ -62,17 +65,17 @@ count=loadData(p);
 			break;
 		}
 		else{
-			printf("잘못된 숫자를 입력하셨습니다. 다시 입력해 주세요.\n");
+			printf("잘못된 숫자를 입력하셨습니다.\n 다시 입력해 주세요.\n");
 		}
 
 	}
 	for(;save!=1;){
-		 printf("변동 사항이 저장되지 않았습니다. 그냥 종료하시겠 습니까?(0.저장후 종료한다. 1.저장하지 않고  종료한다.)\n");
+		 printf("변동 사항이 저장되지 않았습니다.\n 그냥 종료하시겠 습니까?\n(0.저장후 종료한다. 1.저장하지 않고  종료한다.)\n");
 		scanf("%d",&save);
 		if(save==0){
-			saveData(p,count);
+//			saveData(p,count);
 			save=1;
 		}
 	}
-	printf("프로그램을 종료합니다.");
+	printf("프로그램을 종료합니다.\n");
 }	
