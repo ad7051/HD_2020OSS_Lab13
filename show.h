@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "manage.h"
 
 void readProduct(Product p);
