@@ -37,7 +37,7 @@ void searchName(Product *p,int count){
 }
 
 void searchPrice(Product *p,int count){
-	int price=0,scoutn=0;
+	int price=0,scount=0;
 	printf("검색할 가격?(이하로 검색)");
 	scanf("%d",&price);
 	printf("\nNo\tname\tcategory\tprice\tquantity");
@@ -55,7 +55,7 @@ void searchPrice(Product *p,int count){
 		printf("=> 검색된 데이터 없음!");
 }
 void searchQuantity(Product *p,int count){
-	int quantity=0,scoutn=0;
+	int quantity=0,scount=0;
 	printf("검색할 갯수는?(이상으로 검색)");
 	scanf("%d",&quantity);
 	printf("\nNo\tname\tcategory\tprice\tquantity");
