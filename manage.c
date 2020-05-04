@@ -7,6 +7,22 @@ updateProduct
 
 #include "manage.h"
 
+void menu(){
+	printf("*****재고 관리 프로그램*****\n");
+	printf("1. 상품 추가\n");
+	printf("2. 상품 정보 수정\n");
+	printf("3. 상품 정보 삭제\n");
+	printf("4. 제품의 재고 관리\n");
+	printf("5. 상품 판매\n");
+	printf("6. 상품 정보 출력\n");
+	printf("7. 상품 정보 정렬\n");
+	printf("8. 상품 정보 검색\n");
+	printf("9. 상품 정보 저장\n");
+	printf("10. 상품 정보 다시 불러오기\n");
+	printf("0. 종료하기\n");
+	printf("메뉴를 골라주세요!\n");
+}
+
 void addProduct(Product *p,int count){
 	getchar();
 	printf("상품의 이름을 입력해 주세요.");
@@ -42,6 +58,19 @@ void deleteProduct(Product *p){
 		printf("취소됨\n");
 	}
 }
-int loadData(Product p[]);
+int loadData(Product *p){
+	FILE *fp=fopen("list.txt","rt");
+	int count=0;
+	for(;;count++){
+		if(feof(fp))break;
+		fscanf(fp,"%d",&p[count].price);
+		fscanf(fp,"%d",&p[count].quantity);
+		fscanf(fp,"%s",p[count].category);
+		fscanf(fp,"%[^\n]",p[count].name);
+	}
+	printf("로딩됨!");
+	fclose(fp);
+	return count;
+}
 void saveData(Product *p, int count);
 int sale(Product *p);
