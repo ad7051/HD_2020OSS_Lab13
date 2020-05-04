@@ -10,7 +10,7 @@ typedef struct{
 void addProduct(Product *p,int count);
 void updateProduct(Product *p);
 void deleteProduct(Product *p);
-int selectMenu();
-int loadData(Product p[]);
+void menu();
+int loadData(Product *p);
 void saveData(Product *p, int count);
 int sale(Product *p);

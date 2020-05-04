@@ -1,21 +1,5 @@
 #include "show.h"
 //include show.h, manage.h
-void menu(){
-	printf("*****재고 관리 프로그램*****\n");
-	printf("1. 상품 추가\n");
-	printf("2. 상품 정보 수정\n");
-	printf("3. 상품 정보 삭제\n");
-	printf("4. 제품의 재고 관리\n");
-	printf("5. 상품 판매\n");
-	printf("6. 상품 정보 출력\n");
-	printf("7. 상품 정보 정렬\n");
-	printf("8. 상품 정보 검색\n");
-	printf("9. 상품 정보 저장\n");
-	printf("10. 상품 정보 다시 불러오기\n");
-	printf("0. 종료하기\n");
-	printf("메뉴를 골라주세요!\n");
-}
-
 
 int main(){
 Product p[100];
@@ -23,7 +7,7 @@ int mn;//menu
 int count=0;
 int save=0;
 int money=0;
-//count=loadData(p);
+	count=loadData(p);
 	while(1){
 		menu();
 		scanf("%d",&mn);
