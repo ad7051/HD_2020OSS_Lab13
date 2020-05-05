@@ -76,5 +76,12 @@ int loadData(Product p[]){
 	printf("%d 개의 항목이 로딩되었습니다.\n",count);
 	return count;
 }
-void saveData(Product *p, int count);
+void saveData(Product *p, int count){
+	FILE *fp=fopen("list.txt","wt");
+	for(int i=0;i<count;i++){
+	fprintf(fp,"%d %d %s %s\n",p[i].price,p[i].quantity,p[i].category,p[i].name);	
+	}
+	printf("저장됨\n");
+	fclose(fp);
+}
 int sale(Product *p);
