@@ -28,7 +28,8 @@ int money=0;
 			//selectMenu
 			break;
 		case 5:
-			//sellProduct
+			listProduct(p,count);
+			sellProduct(p);
 			break;
 		case 6:
 			listProduct(p,count);
