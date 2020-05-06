@@ -13,3 +13,4 @@ void lineName(Product *p,int count);
 void linePrice(Product *p,int count);
 void lineQuantity(Product *p,int count);
 void lineCategory(Product *p,int count);
+void showSales(int sales);

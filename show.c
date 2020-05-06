@@ -91,3 +91,7 @@ void searchQuantity(Product *p,int count){
 	if(scount==0)
 		printf("=> 검색된 데이터 없음!");
 }
+
+void showSales(int sales){
+	printf("\n총 매출은 %d원입니다\n",sales);
+}
