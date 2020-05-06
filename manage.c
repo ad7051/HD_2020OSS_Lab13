@@ -84,4 +84,21 @@ void saveData(Product *p, int count){
 	printf("저장됨\n");
 	fclose(fp);
 }
-int sale(Product *p);
+int sellProduct(Product *p){
+	int money;
+	int product;
+	int qty; //quantity
+	printf("판매된 물건의 번호를 입력해 주세요.");
+	scanf("%d",&product);
+	product--;
+	printf("해당 물건의 판매된 수량을 입력해 주세요.");
+	scanf("%d",&qty);
+	if(qty>p[product].quantity){
+		printf("판매 수량이 재고를 초과하였습니다.\n");
+		return 0;
+	}
+	p[product].quantity-=qty;
+	money=p[product].price*qty;
+	printf("%s의 수량이 %d 만큼 감소하고, %d만큼의 수입이 생겼습니다.\n",p[product].name,qty,money);
+	return money;	
+}
