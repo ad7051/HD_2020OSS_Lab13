@@ -102,3 +102,19 @@ int sellProduct(Product *p){
 	printf("%s의 수량이 %d 만큼 감소하고, %d만큼의 수입이 생겼습니다.\n",p[product].name,qty,money);
 	return money;	
 }
+
+void updateQuantity(Product *p){
+	int product;
+	int nquantity;
+	printf("재고를 수정할 상품의 번호를 입력해 주세요.");
+	scanf("%d",&product);
+	printf("현제 해당 제품의 재고: %d\n",p[product].quantity);
+	printf("수정하려는 재고 량을 입력해주세요:");
+	scanf("%d",&nquantity);
+	if(nquantity<0){
+	printf("잘못된 수량 입니다\n");
+	}else{
+	p[product].quantity=nquantity;
+	printf("수정되었습니다.\n");
+	}
+}

@@ -14,3 +14,4 @@ void menu();
 int loadData(Product *p);
 void saveData(Product *p, int count);
 int sellProduct(Product *p);
+void updateQuantity(Product *p);
