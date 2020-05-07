@@ -25,7 +25,8 @@ int money=0;
 			deleteProduct(p);
 			break;
 		case 4:
-			//selectMenu
+			listProduct(p,count);
+			updateQuantity(p);
 			break;
 		case 5:
 			listProduct(p,count);
