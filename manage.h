@@ -8,10 +8,10 @@ typedef struct{
 } Product;
 
 void addProduct(Product *p,int count);
-void updateProduct(Product *p);
-void deleteProduct(Product *p);
+void updateProduct(Product *p,int count);
+void deleteProduct(Product *p, int count);
 void menu();
 int loadData(Product *p);
 void saveData(Product *p, int count);
-int sellProduct(Product *p);
-void updateQuantity(Product *p);
+int sellProduct(Product *p,int count);
+void updateQuantity(Product *p,int count);

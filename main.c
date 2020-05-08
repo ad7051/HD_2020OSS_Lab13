@@ -18,19 +18,19 @@ int money=0;
 			break;
 		case 2:
 			listProduct(p,count);
-			updateProduct(p);
+			updateProduct(p,count);
 			break;
 		case 3:
 			listProduct(p,count);
-			deleteProduct(p);
+			deleteProduct(p,count);
 			break;
 		case 4:
 			listProduct(p,count);
-			updateQuantity(p);
+			updateQuantity(p,count);
 			break;
 		case 5:
 			listProduct(p,count);
-			sellProduct(p);
+			sellProduct(p,count);
 			break;
 		case 6:
 			listProduct(p,count);

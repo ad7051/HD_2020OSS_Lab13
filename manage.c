@@ -37,18 +37,26 @@ void addProduct(Product *p,int count){
 	
 }
 
-void updateProduct(Product *p){
+void updateProduct(Product *p,int count){
 	int select;
-	printf("수정을 원하는 제품의 번호를 입력해 주세요.");
-	scanf("%d",&select);
+	for(;;){
+		printf("수정을 원하는 제품의 번호를 입력해 주세요.");
+		scanf("%d",&select);
+		if(count<select)printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+		else break;
+	}
 	addProduct(p,select-1);
 	printf("수정이 완료되었습니다.\n");
 }
-void deleteProduct(Product *p){
+void deleteProduct(Product *p,int count){
 	int select;
 	int check=0;
+	for(;;){
 	printf("삭제를 원하는 제품의 번호를 입력해 주세요.");
 	scanf("%d",&select);
+		if(count<select)printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+		else break;
+	}
 	printf("정말 삭제를 하시겠습니까?(0.아니요 1.예 삭제하겠습니다)");
 	scanf("%d",&check);
 	if(check==1){
@@ -84,37 +92,49 @@ void saveData(Product *p, int count){
 	printf("저장됨\n");
 	fclose(fp);
 }
-int sellProduct(Product *p){
+int sellProduct(Product *p,int count){
 	int money;
-	int product;
+	int select;
 	int qty; //quantity
-	printf("판매된 물건의 번호를 입력해 주세요.");
-	scanf("%d",&product);
-	product--;
+	for(;;){
+		printf("판매된 물건의 번호를 입력해 주세요.");
+		scanf("%d",&select);
+		if(count<select)printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+		else break;
+	}
+	select--;
 	printf("해당 물건의 판매된 수량을 입력해 주세요.");
 	scanf("%d",&qty);
-	if(qty>p[product].quantity){
+	if(qty>p[select].quantity){
 		printf("판매 수량이 재고를 초과하였습니다.\n");
 		return 0;
 	}
-	p[product].quantity-=qty;
-	money=p[product].price*qty;
-	printf("%s의 수량이 %d 만큼 감소하고, %d만큼의 수입이 생겼습니다.\n",p[product].name,qty,money);
+	p[select].quantity-=qty;
+	money=p[select].price*qty;
+	printf("%s의 수량이 %d 만큼 감소하고, %d만큼의 수입이 생겼습니다.\n",p[select].name,qty,money);
 	return money;	
 }
 
-void updateQuantity(Product *p){
-	int product;
+void updateQuantity(Product *p,int count){
+	int select;
 	int nquantity;
-	printf("재고를 수정할 상품의 번호를 입력해 주세요.");
-	scanf("%d",&product);
-	printf("현제 해당 제품의 재고: %d\n",p[product].quantity);
-	printf("수정하려는 재고 량을 입력해주세요:");
-	scanf("%d",&nquantity);
-	if(nquantity<0){
-	printf("잘못된 수량 입니다\n");
-	}else{
-	p[product].quantity=nquantity;
-	printf("수정되었습니다.\n");
+	for(;;){
+		printf("재고를 수정할 상품의 번호를 입력해 주세요.");
+		scanf("%d",&select);
+		if(count<select)printf("잘못된 입력입니다. 다시 입력해주세요.\n");
+		else break;
+	}
+	select--;
+	printf("현제 해당 제품의 재고: %d\n",p[select].quantity);
+	for(;;){
+		printf("수정하려는 재고 량을 입력해주세요:");
+		scanf("%d",&nquantity);
+		if(nquantity<0){
+			printf("잘못된 수량 입니다. 다시 입력해주세요.\n");
+		}else{
+			p[select].quantity=nquantity;
+			printf("수정되었습니다.\n");
+			break;
+		}
 	}
 }
