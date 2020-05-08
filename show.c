@@ -1,7 +1,7 @@
 #include "show.h"
 
 void readProduct(Product p){
-	printf("\t%s\t%s\t%d\t%d",p.name,p.category,p.price,p.quantity);
+	printf("\t%s\t%s\t%d\t%d\n",p.name,p.category,p.price,p.quantity);
 }
 void listProduct(Product *p,int count){
 	printf("\nNo\tname\tcategory\tprice\tquantity");
