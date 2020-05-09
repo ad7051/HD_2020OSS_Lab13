@@ -95,3 +95,11 @@ void searchQuantity(Product *p,int count){
 void showSales(int sales){
 	printf("\n총 매출은 %d원입니다\n",sales);
 }
+void lineName(Product *p,int count){
+}
+void linePrice(Product *p,int count){
+}
+void lineQuantity(Product *p,int count){
+}
+void lineCategory(Product *p,int count){
+}
