@@ -95,7 +95,13 @@ void searchQuantity(Product *p,int count){
 void showSales(int sales){
 	printf("\n총 매출은 %d원입니다\n",sales);
 }
+void swapList(Product *p1,Product *p2){
+	Product temp=*p1;
+	*p1=*p2;
+	*p2=temp;
+}
 void lineName(Product *p,int count){
+	
 }
 void linePrice(Product *p,int count){
 }
