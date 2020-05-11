@@ -8,7 +8,7 @@ int count=0;
 int save=0;
 int money=0;
 	#ifdef DEBUG
-		printf("DEBUG[loadData]\n");
+		printf("DEBUG[manage.h:loadData]\n");
 	#endif	
 	count=loadData(p);
 	while(1){
@@ -17,73 +17,79 @@ int money=0;
 	switch(mn){
 		case 1:
 	#ifdef DEBUG
-		printf("DEBUG[addProduct]\n");
+		printf("DEBUG[manage.h:addProduct]\n");
 	#endif	
 			addProduct(p,count);
 			count++;
 			break;
 		case 2:
 	#ifdef DEBUG
-		printf("DEBUG[listProduct]\n");
+		printf("DEBUG[manage.hlistProduct]\n");
 	#endif	
 			listProduct(p,count);
 	#ifdef DEBUG
-		printf("DEBUG[updateProduct]\n");
+		printf("DEBUG[manage.h:updateProduct]\n");
 	#endif	
 			updateProduct(p,count);
 			break;
 		case 3:
 	#ifdef DEBUG
-		printf("DEBUG[listProduct]\n");
+		printf("DEBUG[manage.h:listProduct]\n");
 	#endif	
 			listProduct(p,count);
 	#ifdef DEBUG
-		printf("DEBUG[deleteProduct]\n");
+		printf("DEBUG[manage.h:deleteProduct]\n");
 	#endif	
 			deleteProduct(p,count);
 			break;
 		case 4:
 	#ifdef DEBUG
-		printf("DEBUG[listProduct]\n");
+		printf("DEBUG[manage.h:listProduct]\n");
 	#endif	
 			listProduct(p,count);
 	#ifdef DEBUG
-		printf("DEBUG[updateQuantity]\n");
+		printf("DEBUG[manage.h:updateQuantity]\n");
 	#endif	
 			updateQuantity(p,count);
 			break;
 		case 5:
 	#ifdef DEBUG
-		printf("DEBUG[listProduct]\n");
+		printf("DEBUG[show.h:listProduct]\n");
 	#endif	
 			listProduct(p,count);
 	#ifdef DEBUG
-		printf("DEBUG[sellProduct]\n");
+		printf("DEBUG[manage.h:sellProduct]\n");
 	#endif	
 			sellProduct(p,count);
 			break;
 		case 6:
 	#ifdef DEBUG
-		printf("DEBUG[listProduct]\n");
+		printf("DEBUG[show.h:listProduct]\n");
 	#endif	
 			listProduct(p,count);
 			break;
 		case 7:
+	#ifdef DEBUG
+		printf("DEBUG[show.h:lineProduct]\n");
+	#endif	
 			//lineProduct
 			break;
 		case 8:
+	#ifdef DEBUG
+		printf("DEBUG[show.h:searchProduct]\n");
+	#endif	
 			//searchProduct
 			break;
 		case 9:
 	#ifdef DEBUG
-		printf("DEBUG[saveData]\n");
+		printf("DEBUG[manage.h:saveData]\n");
 	#endif	
 			saveData(p,count);
 			save=1;
 			break;
 		case 10:
 	#ifdef DEBUG
-		printf("DEBUG[loadData]\n");
+		printf("DEBUG[manage.h:loadData]\n");
 	#endif	
 			count=loadData(p);
 			break;
@@ -101,7 +107,7 @@ int money=0;
 		scanf("%d",&save);
 		if(save==0){
 	#ifdef DEBUG
-		printf("DEBUG[saveData]\n");
+		printf("DEBUG[manage.h:saveData]\n");
 	#endif	
 			saveData(p,count);
 			save=1;
