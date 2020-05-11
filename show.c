@@ -1,4 +1,5 @@
 #include "show.h"
+#include <string.h>
 
 void readProduct(Product p){
 	printf("\t%s\t%s\t%d\t%d\n",p.name,p.category,p.price,p.quantity);
@@ -101,7 +102,12 @@ void swapList(Product *p1,Product *p2){
 	*p2=temp;
 }
 void lineName(Product *p,int count){
-	
+	for(int i=1;i<count;i++){
+		for(int j=0;j<count-i;j++){
+			if(strcmp(p[j].name,p[j+1].name)>0)
+				swapList(&p[j],&p[j+1]);
+		}
+	}
 }
 void linePrice(Product *p,int count){
 }

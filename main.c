@@ -72,7 +72,7 @@ int money=0;
 	#ifdef DEBUG
 		printf("DEBUG[show.h:lineProduct]\n");
 	#endif	
-			//lineProduct
+			
 			break;
 		case 8:
 	#ifdef DEBUG
