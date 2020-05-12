@@ -24,16 +24,58 @@ void menu(){
 }
 
 void addProduct(Product *p,int count){
+	char temp[100];
+	int EC=0; // errorcheck
 	getchar();
-	printf("상품의 이름을 입력해 주세요.");
-	scanf("%[^\n]",p[count].name);
+	while(1){
+		printf("상품의 이름을 입력해 주세요.");
+		fscanf(stdin,"%[^\n]",temp);
+		if(strlen(temp)<=50)break;
+		printf("잘못된 입력입니다.\n");
+		getchar();
+	}
+	strcpy(p[count].name,temp);
 	getchar();
-	printf("상품의 종류를 입력해 주세요.");
-	scanf("%[^\n]",p[count].category);
-	printf("상품의 가격을 입력해 주세요.");
-	scanf("%d",&p[count].price);
-	printf("상품의 수량을 입력해 주세요.");
-	scanf("%d",&p[count].quantity);
+	while(1){
+		printf("상품의 종류를 입력해 주세요.");
+		fscanf(stdin,"%[^\n]",temp);
+		if(strlen(temp)<=3)break;
+		printf("잘못된 입력입니다.\n");
+		getchar();
+	}
+	strcpy(p[count].category,temp);
+	getchar();
+	while(1){
+		printf("상품의 가격을 입력해 주세요.");
+		fscanf(stdin,"%[^\n]",temp);
+		for(int i=0;i<strlen(temp);i++){
+			if(temp[i]<48||57<temp[i]){
+			EC=1;
+			break;
+			}
+			else EC=0;
+		}
+		if(EC==0)break;
+		printf("숫자 이외의 잘못된 입력 입니다.\n");
+		getchar();
+	}
+	p[count].price=atoi(temp);
+	getchar();
+	while(1){
+		printf("상품의 수량을 입력해 주세요.");
+		fscanf(stdin,"%[^\n]",temp);
+		for(int i=0;i<strlen(temp);i++){
+			if(temp[i]<48||57<temp[i]){
+			EC=1;
+			break;
+			}
+			else EC=0;
+		}
+		if(EC==0)break;
+		printf("숫자 이외의 잘못된 입력 입니다.\n");
+		getchar();
+	}
+	p[count].quantity=atoi(temp);
 	
 }
 
