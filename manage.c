@@ -29,7 +29,7 @@ void addProduct(Product *p,int count){
 	getchar();
 	while(1){
 		printf("상품의 이름을 입력해 주세요.");
-		fscanf(stdin,"%[^\n]",temp);
+		scanf("%[^\n]",temp);
 		if(strlen(temp)<=50)break;
 		printf("잘못된 입력입니다.\n");
 		getchar();
@@ -38,7 +38,7 @@ void addProduct(Product *p,int count){
 	getchar();
 	while(1){
 		printf("상품의 종류를 입력해 주세요.");
-		fscanf(stdin,"%[^\n]",temp);
+		scanf("%[^\n]",temp);
 		if(strlen(temp)<=3)break;
 		printf("잘못된 입력입니다.\n");
 		getchar();
@@ -47,7 +47,7 @@ void addProduct(Product *p,int count){
 	getchar();
 	while(1){
 		printf("상품의 가격을 입력해 주세요.");
-		fscanf(stdin,"%[^\n]",temp);
+		scanf("%[^\n]",temp);
 		for(int i=0;i<strlen(temp);i++){
 			if(temp[i]<48||57<temp[i]){
 			EC=1;
@@ -63,7 +63,7 @@ void addProduct(Product *p,int count){
 	getchar();
 	while(1){
 		printf("상품의 수량을 입력해 주세요.");
-		fscanf(stdin,"%[^\n]",temp);
+		scanf("%[^\n]",temp);
 		for(int i=0;i<strlen(temp);i++){
 			if(temp[i]<48||57<temp[i]){
 			EC=1;
