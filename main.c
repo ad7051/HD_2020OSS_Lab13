@@ -72,13 +72,53 @@ int money=0;
 	#ifdef DEBUG
 		printf("DEBUG[show.h:lineProduct]\n");
 	#endif	
-			
+			int line_menu=lineMenu();
+			switch(line_menu){
+				case 1:
+					lineName(p,count);
+					break;
+				case 2:
+					linePrice(p,count);
+					break;
+				case 3:
+					lineQuantity(p,count);
+					break;
+				case 4:
+					lineCategory(p,count);
+					break;
+				case 0:
+					printf("\n취소됨!\n");
+					break;
+				default:
+					printf("잘못된 숫자를 입력하셨습니다.\n");
+					break;
+			} 
 			break;
 		case 8:
 	#ifdef DEBUG
 		printf("DEBUG[show.h:searchProduct]\n");
 	#endif	
-			//searchProduct
+			int search_menu=searchMenu();
+			switch(search_menu){
+				case 1:
+					searchName(p,count);
+					break;
+				case 2:
+					searchPrice(p,count);
+					break;
+				case 3:
+					searchQuantity(p,count);
+					break;
+				case 4:
+					searchCategory(p,count);
+					break;
+				case 0:
+					printf("\n취소됨!\n");
+					break;
+				default:
+					printf("잘못된 숫자를 입력하셨습니다.\n");
+					break;
+			} 
 			break;
 		case 9:
 	#ifdef DEBUG
