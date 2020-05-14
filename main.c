@@ -1,6 +1,7 @@
 #include "show.h"
 //include show.h, manage.h
-
+int line_menu;
+int search_menu;
 int main(){
 Product p[100];
 int mn;//menu
@@ -72,7 +73,7 @@ int money=0;
 	#ifdef DEBUG
 		printf("DEBUG[show.h:lineProduct]\n");
 	#endif	
-			int line_menu=lineMenu();
+			line_menu=lineMenu();
 			switch(line_menu){
 				case 1:
 					lineName(p,count);
@@ -98,7 +99,7 @@ int money=0;
 	#ifdef DEBUG
 		printf("DEBUG[show.h:searchProduct]\n");
 	#endif	
-			int search_menu=searchMenu();
+			search_menu=searchMenu();
 			switch(search_menu){
 				case 1:
 					searchName(p,count);
