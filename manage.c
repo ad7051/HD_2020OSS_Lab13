@@ -113,7 +113,6 @@ int loadData(Product p[]){
 	FILE*fp=fopen("list.txt","rt");
 	if(fp==NULL){
 		printf("저장된 파일이 없음.\n");
-		fclose(fp);
 		return 0;
 	}
 	for(;;count++){
