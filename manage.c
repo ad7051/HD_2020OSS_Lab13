@@ -129,6 +129,7 @@ int loadData(Product p[]){
 void saveData(Product *p, int count){
 	FILE *fp=fopen("list.txt","wt");
 	for(int i=0;i<count;i++){
+	if(p[i].price!=-1)
 	fprintf(fp,"%d %d %s %s\n",p[i].price,p[i].quantity,p[i].category,p[i].name);	
 	}
 	printf("저장됨\n");
