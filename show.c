@@ -16,11 +16,10 @@ void listProduct(Product *p,int count){
 void searchName(Product *p,int count){
 	int scount=0;
 	char search[20];
-
-	printf("\n검색할 이름? ");
+	printf("\n검색할 이름?(한글은 검색되지 않습니다.) ");
 	getchar();
 	fgets(search,sizeof(search),stdin);
-
+	search[strlen(search)-1]='\0';
 	printf("\nNo\tname\tcategory\tprice\tquantity\n");
 	for(int i=0;i<count;i++){
 		if(p[i].price !=-1){
@@ -62,7 +61,7 @@ void searchCategory(Product *p,int count){
 	printf("\nNo\tname\tcategory\tprice\tquantity\n");
 	for(int i=0;i<count;i++){
 		if(p[i].price !=-1){
-			if(category[0]==p[i].category[0]){
+			if(strstr(p[i].category,category)){
 			printf("%2d",i+1);
 			readProduct(p[i]);
 			scount++;
