@@ -16,7 +16,7 @@ void listProduct(Product *p,int count){
 void searchName(Product *p,int count){
 	int scount=0;
 	char search[20];
-	printf("\n검색할 이름?(한글은 검색되지 않습니다.) ");
+	printf("\n검색할 이름?");
 	getchar();
 	fgets(search,sizeof(search),stdin);
 	search[strlen(search)-1]='\0';
